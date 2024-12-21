@@ -82,10 +82,10 @@ class TravelPlanner(QMainWindow):
             self.table.insertRow(row_index)
 
             travel_name_item = QTableWidgetItem(row[1])
-            travel_name_item.setData(Qt.UserRole, row[0])  # Store plan ID as user data
-            self.table.setItem(row_index, 0, travel_name_item)  # Travel Name
+            travel_name_item.setData(Qt.UserRole, row[0])
+            self.table.setItem(row_index, 0, travel_name_item)
 
-            self.table.setItem(row_index, 1, QTableWidgetItem(row[2]))  # Date
+            self.table.setItem(row_index, 1, QTableWidgetItem(row[2]))
 
             delete_button = QPushButton("削除")
             delete_button.clicked.connect(lambda checked, plan_id=row[0]: self.delete_plan(plan_id))
